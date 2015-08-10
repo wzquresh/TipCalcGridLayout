@@ -6,7 +6,7 @@
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
     android:columnCount="3"
     android:useDefaultMargins="true"
-    android:id="@+id/">
+    android:id="@+id/gridLayout">
 
     <TextView
         android:layout_width="wrap_content"
@@ -15,28 +15,41 @@
         android:text="Tip"
         android:id="@+id/tipTextView"
         android:layout_row="3"
-        android:layout_column="1" />
+        android:layout_column="1"
+        android:layout_gravity="center_vertical|right" />
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_row="3"
-        android:layout_column="2">
+        android:layout_column="2"
+        android:id="@+id/tipLinearLayout"
+        android:layout_gravity="fill_horizontal">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Medium Text"
-            android:id="@+id/tip15TextView" />
+            android:id="@+id/tip15TextView"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:layout_marginRight="@dimen/textview_margin"
+            android:background="@android:color/holo_orange_light"
+            android:gravity="center"
+            android:padding="@dimen/textview_padding" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Medium Text"
-            android:id="@+id/tipCustomTextView" />
+            android:id="@+id/tipCustomTextView"
+            android:padding="@dimen/textview_padding"
+            android:gravity="center"
+            android:background="@android:color/holo_orange_light"
+            android:layout_weight="1"
+            android:layout_marginRight="@dimen/textview_margin"
+            android:layout_gravity="center_horizontal" />
     </LinearLayout>
 
     <TextView
@@ -52,21 +65,35 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_row="2"
-        android:layout_column="2">
+        android:layout_column="2"
+        android:id="@+id/percentLinearLayout"
+        android:layout_gravity="fill_horizontal">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Medium Text"
-            android:id="@+id/percent15TextView" />
+            android:id="@+id/percent15TextView"
+            android:text="@string/fifteen_percent"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:layout_marginRight="@dimen/textview_margin"
+            android:background="@android:color/holo_orange_light"
+            android:gravity="center"
+            android:padding="@dimen/textview_padding" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Medium Text"
-            android:id="@+id/percentCustomTextView" />
+            android:text="@string/eighteen_percent"
+            android:id="@+id/percentCustomTextView"
+            android:layout_weight="1"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="@dimen/textview_margin"
+            android:background="@android:color/holo_orange_light"
+            android:gravity="center"
+            android:padding="@dimen/textview_padding" />
     </LinearLayout>
 
     <TextView
@@ -84,14 +111,18 @@
         android:text="Custom %"
         android:id="@+id/customPercentTextView"
         android:layout_row="1"
-        android:layout_column="1" />
+        android:layout_column="1"
+        android:layout_gravity="center_vertical|right" />
 
     <SeekBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/customTipSeekBar"
         android:layout_row="1"
-        android:layout_column="2" />
+        android:layout_column="2"
+        android:layout_gravity="fill_horizontal"
+        android:max="30"
+        android:progress="18" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -122,10 +153,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Medium Text"
         android:id="@+id/amountDisplayText"
         android:layout_row="0"
-        android:layout_column="2" />
+        android:layout_column="2"
+        android:layout_gravity="fill_horizontal"
+        android:background="@android:color/holo_blue_bright"
+        android:padding="@dimen/textview_padding"
+        android:labelFor="@+id/amountEditText" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -134,28 +168,40 @@
         android:text="Total"
         android:id="@+id/totalTextView"
         android:layout_row="4"
-        android:layout_column="1" />
+        android:layout_column="1"
+        android:layout_gravity="center_vertical|right" />
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_row="4"
-        android:layout_column="2">
+        android:layout_column="2"
+        android:layout_gravity="fill_horizontal">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Medium Text"
-            android:id="@+id/total15TextView" />
+            android:id="@+id/total15TextView"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="@dimen/textview_margin"
+            android:layout_weight="1"
+            android:background="@android:color/holo_orange_light"
+            android:gravity="center"
+            android:padding="@dimen/textview_padding" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Medium Text"
-            android:id="@+id/totalCustomTextView" />
+            android:id="@+id/totalCustomTextView"
+            android:padding="@dimen/textview_padding"
+            android:gravity="center"
+            android:background="@android:color/holo_orange_light"
+            android:layout_weight="1"
+            android:layout_marginRight="@dimen/textview_margin"
+            android:layout_gravity="center_horizontal" />
     </LinearLayout>
 
     <TextView
@@ -165,16 +211,18 @@
         android:text="Amount"
         android:id="@+id/amountTextView"
         android:layout_row="0"
-        android:layout_column="1" />
+        android:layout_column="1"
+        android:layout_gravity="right" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="number"
-        android:ems="10"
         android:id="@+id/amountEditText"
         android:layout_row="0"
-        android:layout_column="2" />
+        android:layout_column="2"
+        android:digits="0123456789"
+        android:maxLength="6" />
 
     <TextView
         android:layout_width="wrap_content"
